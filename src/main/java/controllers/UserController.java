@@ -16,14 +16,12 @@ public class UserController {
 
     @GetMapping
     public List<User> findAll() {
-        List<User> result = repository.findAll();
-        return result;
+        return repository.findAll();
     }
 
-    @GetMapping(value = "{/id}")
-    public User findById(@PathVariable Long id) {
-        User result = repository.findById(id).get();
-        return result;
+    @GetMapping(value = "/{id}")
+    public User findAll(@PathVariable Long id) {
+        return repository.findById(id).get();
     }
 
     @PostMapping
